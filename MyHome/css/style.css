@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #e0e0e0;
+  color: gray;
+  text-align: center;
+  padding: 10px;
+  height: 7vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid white;
+}
+
+header h3,
+header p {
+  margin: 30px;
+}
+
+main {
+  margin: 9vh 10px 10vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 25px;
+}
+
+#main-content {
+  background-color: #e0e0e0;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+#main-content img,
+#side-content img {
+  max-width: 100%;
+  height: auto;
+}
+#main-content > div,
+#main-content > section {
+  margin-bottom: 40px;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+}
+
+.content-second {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.content-last {
+  display: flex;
+  gap: 20px;
+}
+
+.content-last > div {
+  flex: 1;
+}
+
+.content-first {
+  background-color: #f2f2f2;
+  padding: 33px;
+  max-width: 100%;
+  height: auto;
+  display: grid;
+}
+
+.content-first > div:not(:first-child):not(:last-child) {
+  overflow: hidden;
+  border-bottom: 1px solid lightblue;
+}
+
+#side-content {
+  background-color: #e0e0e0;
+  padding: 15px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+#side-content h1,
+#side-content p {
+  margin-bottom: 40px;
+}
+
+#side-content button {
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.side-paragraph {
+  background-color: pink;
+  padding: 30px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#footer-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer-first,
+.footer-second {
+  text-align: left;
+}
+
+.footer-first {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.footer-second {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.footer-third {
+  display: grid;
+  justify-items: right;
+  grid-gap: 10px;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.sns img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-third input {
+  width: 150px;
+  height: 25px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 10px;
+  padding-left: 10px;
+}
+
+.footer-third button {
+  width: 100px;
+  height: 25px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 10px;
+  background-color: pink;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  header p {
+    display: none;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #main-content {
+    order: 1;
+  }
+
+  #side-content {
+    order: 2;
+  }
+  #footer-section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "first second"
+      "third third";
+    grid-gap: 30px;
+  }
+
+  .footer-first {
+    grid-area: first;
+  }
+
+  .footer-second {
+    grid-area: second;
+  }
+
+  .footer-third {
+    grid-area: third;
+    display: flex;
+    justify-content: row-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  header p {
+    display: none;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+
+  .content-second {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-last {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #main-content {
+    order: 1;
+  }
+
+  #side-content {
+    order: 2;
+  }
+
+  #footer-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "first"
+      "third"
+      "second";
+  }
+
+  .footer-first,
+  .footer-second,
+  .footer-third {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
