@@ -154,12 +154,30 @@ footer {
   grid-gap: 10px;
 }
 
+.footer-third {
+  display: grid;
+  justify-items: right;
+  grid-gap: 10px;
+}
+.sns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.sns img {
+  width: 30px;
+  height: 30px;
+}
+
 .footer-third input {
   width: 150px;
   height: 25px;
   border: none;
   box-sizing: border-box;
   font-size: 10px;
+  padding-left: 10px;
 }
 
 .footer-third button {
@@ -168,6 +186,9 @@ footer {
   border: none;
   box-sizing: border-box;
   font-size: 10px;
+  background-color: pink;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
