@@ -5,7 +5,6 @@
 
 body {
   background-color: #e0e0e0;
-  /* padding: 20px; */
   font-family: Arial, sans-serif;
 }
 
@@ -33,18 +32,16 @@ header p {
 }
 
 main {
-  margin: 9vh 10px 10vh; /* Adjusted to accommodate fixed header and footer */
-  /* background-color: #fff; */
+  margin: 9vh 10px 10vh;
   display: grid;
-  grid-template-columns: 3fr 1fr; /* 2:1 ratio */
-  grid-gap: 25px; /* optional: adds gap between the columns */
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 25px;
 }
 
-/* Style for main-content */
 #main-content {
-  background-color: #e0e0e0; /* Light Gray */
+  background-color: #e0e0e0;
   padding: 40px;
-  border-radius: 5px; /* Optional: Rounded Corners */
+  border-radius: 5px;
 }
 
 #main-content img,
@@ -54,7 +51,7 @@ main {
 }
 #main-content > div,
 #main-content > section {
-  margin-bottom: 40px; /* Adjust the value as needed */
+  margin-bottom: 40px;
 }
 
 .main-section {
@@ -74,7 +71,7 @@ main {
 }
 
 .content-last > div {
-  flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0; */
+  flex: 1;
 }
 
 .content-first {
@@ -86,17 +83,16 @@ main {
 }
 
 .content-first > div:not(:first-child):not(:last-child) {
-  overflow: hidden; /* in case the text is too long */
+  overflow: hidden;
   border-bottom: 1px solid lightblue;
 }
 
-/* Style for side-content */
 #side-content {
   background-color: #e0e0e0;
   padding: 15px;
-  border-radius: 5px; /* Optional: Rounded Corners */
+  border-radius: 5px;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr; /* 1:2:1 ratio */
+  grid-template-rows: 1fr 2fr 1fr;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -133,40 +129,76 @@ footer {
   right: 0;
 }
 
+.footer-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.footer-first,
+.footer-second {
+  text-align: left;
+}
+
+.footer-first {
+  text-align: left;
+  padding-left: 20px; /* optional: 왼쪽 여백을 추가하고 싶으면 이 속성도 사용할 수 있습니다. */
+}
+
+.footer-second {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.footer-third input {
+  width: 150px;
+  height: 25px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+.footer-third button {
+  width: 100px;
+  height: 25px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
 @media (max-width: 1024px) {
-  /* Hide header p tags */
   header p {
     display: none;
   }
 
-  /* Reorder main and side content */
   main {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr;
   }
 
-  /* Use 'order' to rearrange items. Smaller numbers come first. */
   #main-content {
-    order: 1; /* this will come second */
+    order: 1;
   }
 
   #side-content {
-    order: 2; /* this will come first */
+    order: 2;
   }
 }
 
 @media (max-width: 768px) {
-  /* Hide header p tags */
   header p {
     display: none;
   }
 
-  /* Reorder main and side content */
   main {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr;
   }
 
   .main-section {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr;
   }
 
   .content-second {
@@ -180,12 +212,11 @@ footer {
     gap: 20px;
   }
 
-  /* Use 'order' to rearrange items. Smaller numbers come first. */
   #main-content {
-    order: 1; /* this will come second */
+    order: 1;
   }
 
   #side-content {
-    order: 2; /* this will come first */
+    order: 2;
   }
 }
